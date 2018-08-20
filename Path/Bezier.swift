@@ -12,12 +12,12 @@ class Bezier: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .lightGray
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = .white
+        backgroundColor = .lightGray
     }
     
     func rectangle() -> UIBezierPath {
@@ -100,7 +100,10 @@ class Bezier: UIView {
         monLayer.fillColor = UIColor.blue.cgColor
         monLayer.lineWidth = 2
         monLayer.strokeColor = UIColor.cyan.cgColor
-        self.layer.addSublayer(monLayer)
+        //self.layer.addSublayer(monLayer)
+        
+        // creation d'un masque
+        self.layer.mask = monLayer
         
         
         
