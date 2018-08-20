@@ -79,10 +79,10 @@ class Bezier: UIView {
     
     override func draw(_ rect: CGRect) {
         // code pour le bezier
-        let path = ligneCourbe()
+        //let path = ligneCourbe()
         //let path = ligne()
         //let path = demi()
-        //let path = ovale()
+        let path = ovale()
         //let path = rectangleArrAlt()
         //let path = rectangleArr()
         //let path = triangle()
@@ -93,6 +93,18 @@ class Bezier: UIView {
         
         UIColor.black.setStroke()
         path.stroke()
+        
+        // creation d'un layer
+        let monLayer = CAShapeLayer()
+        monLayer.path = path.cgPath
+        monLayer.fillColor = UIColor.blue.cgColor
+        monLayer.lineWidth = 2
+        monLayer.strokeColor = UIColor.cyan.cgColor
+        self.layer.addSublayer(monLayer)
+        
+        
+        
+        
     }
 
 }
